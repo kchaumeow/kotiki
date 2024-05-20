@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { CatModule } from './cat/cat.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@nestjs/config';
+import { Cat } from './cat/entities/cat.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { ConfigModule } from '@nestjs/config';
     username: process.env.MYSQL_USER_NAME,
     password: process.env.MYSQL_USER_PASS,
     database: process.env.MYSQL_DATABASE_NAME,
-    models: [],
+    models: [Cat],
     autoLoadModels: true,
   }), ],
   controllers: [AppController],
